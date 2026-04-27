@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BWGA</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Ballad Woodley GitHub Abstraction</p>
+          <h1>BWGA</h1>
+          <p class="lede">
+            Read a GitHub profile like a theory of mind. BWGA pulls public repo
+            metadata, READMEs, and file trees, then sorts each project into
+            strategic framing, working mechanism, or sketch energy.
+          </p>
+        </div>
+        <form class="query-bar" id="analyze-form">
+          <label class="field">
+            <span>Primary Username</span>
+            <input
+              id="username-input"
+              name="username"
+              type="text"
+              placeholder="balladwoodley"
+              value="balladwoodley"
+              autocomplete="off"
+            />
+          </label>
+          <label class="field">
+            <span>Compare Against</span>
+            <input
+              id="compare-username-input"
+              name="compare-username"
+              type="text"
+              placeholder="another-username"
+              autocomplete="off"
+            />
+          </label>
+          <button id="analyze-button" type="submit">Materialise</button>
+        </form>
+      </header>
+
+      <main class="layout">
+        <section class="panel profile-panel">
+          <div class="panel-head">
+            <h2>Subject</h2>
+            <p id="status-line">Ready.</p>
+          </div>
+          <div id="profile-card" class="profile-card empty">
+            <p>Run an analysis to populate the profile sketch.</p>
+          </div>
+        </section>
+
+        <section class="panel summary-panel">
+          <div class="panel-head">
+            <h2>Abstraction Read</h2>
+            <p>What this person is actually up to.</p>
+          </div>
+          <div id="summary-output" class="summary-output empty">
+            <p>The synthesis appears here.</p>
+          </div>
+        </section>
+
+        <section class="panel scoreboard-panel">
+          <div class="panel-head">
+            <h2>Signal Mix</h2>
+            <p>Repo energy split by layer.</p>
+          </div>
+          <div id="scoreboard" class="scoreboard empty">
+            <p>No scores yet.</p>
+          </div>
+        </section>
+
+        <section class="panel compare-panel">
+          <div class="panel-head">
+            <h2>Comparison Mode</h2>
+            <p>Compare two public GitHub identities, not two repos from one identity.</p>
+          </div>
+          <div id="comparison-output" class="comparison-output empty">
+            <p>Add a second username to compare two profiles.</p>
+          </div>
+        </section>
+
+        <section class="panel repo-panel">
+          <div class="panel-head">
+            <h2>Repo Map</h2>
+            <p>Usefulness, skepticism, and buildability at repo granularity.</p>
+          </div>
+          <div id="repo-grid" class="repo-grid empty">
+            <p>Repos will appear here.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="repo-card-template">
+      <article class="repo-card">
+        <div class="repo-topline">
+          <a class="repo-link" target="_blank" rel="noreferrer"></a>
+          <span class="repo-badge"></span>
+        </div>
+        <p class="repo-description"></p>
+        <div class="repo-stats"></div>
+        <div class="repo-scores"></div>
+        <p class="repo-verdict"></p>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
